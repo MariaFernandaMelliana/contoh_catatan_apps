@@ -24,9 +24,19 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 184, 231, 255),
       appBar: AppBar(
-        title: Text('Home screen'),
-        actions: [
+        title: const Text('RUANG DISKUSI'),
+         automaticallyImplyLeading: false,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.add_alert),
+            tooltip: 'Show Snackbar',
+        onPressed: () {
+        final snackBar = SnackBar(content: Text('Selamat Datang di Ruang Diskusi Creator by Maria Fernanda Melliana Nim 200101128'));
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      },
+      ),
           IconButton(
             onPressed: () {
               FirebaseAuthServices().logout().then((value) {
@@ -41,6 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
+      
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           addCatatan(context);
@@ -73,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Card(
                           child: ListTile(
                             title: Text('${data?.docs[index]['judul']}'),
-                            subtitle: Text('tanggal catatan'),
+                            subtitle: Text('tanggal diskusi'),
                             trailing: IconButton(
                                 onPressed: () {
                                   editCatatan(
@@ -101,13 +112,13 @@ class _HomeScreenState extends State<HomeScreen> {
       context: context,
       builder: (_) => SimpleDialog(
         contentPadding: EdgeInsets.all(8),
-        title: Text('add catatan'),
+        title: Text('Tambahkan Diskusi'),
         children: [
           TextField(
             controller: judulController,
             decoration: InputDecoration(
-              labelText: 'Judul',
-              hintText: 'masukkan judul',
+              labelText: 'Judul Diskusi',
+              hintText: 'masukkan judul diskusi',
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
@@ -119,8 +130,8 @@ class _HomeScreenState extends State<HomeScreen> {
           TextField(
             controller: isiController,
             decoration: InputDecoration(
-              labelText: 'Isi',
-              hintText: 'masukkan isi',
+              labelText: 'Isi Diskusi',
+              hintText: 'masukkan isi diskusi',
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
@@ -177,13 +188,13 @@ class _HomeScreenState extends State<HomeScreen> {
       context: context,
       builder: (_) => SimpleDialog(
         contentPadding: EdgeInsets.all(8),
-        title: Text('edit catatan'),
+        title: Text('Edit Diskusi'),
         children: [
           TextField(
             controller: judulController,
             decoration: InputDecoration(
-              labelText: 'Judul',
-              hintText: 'masukkan judul',
+              labelText: 'Judul Diskusi',
+              hintText: 'masukkan judul diskusi',
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
@@ -195,8 +206,8 @@ class _HomeScreenState extends State<HomeScreen> {
           TextField(
             controller: isiController,
             decoration: InputDecoration(
-              labelText: 'Isi',
-              hintText: 'masukkan isi',
+              labelText: 'Isi Diskusi',
+              hintText: 'masukkan isi diskusi',
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
               ),

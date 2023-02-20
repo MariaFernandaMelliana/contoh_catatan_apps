@@ -37,11 +37,18 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 184, 231, 255),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Text('login'),
+            Text(
+              'LOGIN',
+              style: TextStyle(
+              fontFamily:'Montserrat',
+              fontWeight: FontWeight.bold,
+              ),
+              ),
             SizedBox(
               height: 30,
             ),
@@ -50,6 +57,9 @@ class _LoginScreenState extends State<LoginScreen> {
               decoration: InputDecoration(
                 labelText: 'email',
                 hintText: 'masukkan email',
+                prefixIcon: const Icon(
+                  Icons.email_outlined,
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -63,6 +73,9 @@ class _LoginScreenState extends State<LoginScreen> {
               decoration: InputDecoration(
                 labelText: 'password',
                 hintText: 'masukkan password',
+                prefixIcon: const Icon(
+                  Icons.lock_outline,
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -88,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 );
               },
-              child: Text('Belum punya akun? daftar disini'),
+              child: Text('Silahkan Buat Akun Terlebih Dahulu!'),
             ),
           ],
         ),

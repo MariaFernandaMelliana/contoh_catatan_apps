@@ -30,11 +30,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 184, 231, 255),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Text('register'),
+            Text(
+              'REGISTER',
+              style: TextStyle(
+              fontFamily:'Montserrat',
+              fontWeight: FontWeight.bold,
+              ),
+              ),
             SizedBox(
               height: 30,
             ),
@@ -43,6 +50,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
               decoration: InputDecoration(
                 labelText: 'email',
                 hintText: 'masukkan email',
+                prefixIcon: const Icon(
+                  Icons.email_outlined,
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -56,6 +66,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
               decoration: InputDecoration(
                 labelText: 'password',
                 hintText: 'masukkan password',
+                prefixIcon: const Icon(
+                  Icons.lock_outline,
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -77,7 +90,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Sudah punya akun? Logn disini'),
+              child: Text('Login disini!'),
             ),
           ],
         ),
