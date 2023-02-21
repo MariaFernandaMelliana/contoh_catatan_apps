@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           children: [
             Text(
-              'LOGIN',
+              'LOGIN RUANG CATATAN PRIBADI',
               style: TextStyle(
               fontFamily:'Montserrat',
               fontWeight: FontWeight.bold,
